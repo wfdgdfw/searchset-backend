@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.weng.searchset.model.dto.user.UserQueryRequest;
 import com.weng.searchset.model.enums.SearchTypeEnum;
 import com.weng.searchset.model.vo.UserVO;
-import com.weng.searchset.Strategy.SearchTypeStrategy;
 import com.weng.searchset.service.UserService;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Component
-public class UserStrategy implements SearchTypeStrategy {
+public class UserStrategy implements DataSourceStrategy {
 
     @Resource
     private UserService userService;

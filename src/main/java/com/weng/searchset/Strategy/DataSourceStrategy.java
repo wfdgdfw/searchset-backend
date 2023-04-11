@@ -4,7 +4,7 @@ package com.weng.searchset.Strategy;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-public interface SearchTypeStrategy {
+public interface DataSourceStrategy {
 
     /**
      * 搜索类型

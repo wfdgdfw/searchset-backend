@@ -5,7 +5,6 @@ import com.weng.searchset.model.dto.post.PostQueryRequest;
 import com.weng.searchset.model.entity.Post;
 import com.weng.searchset.model.enums.SearchTypeEnum;
 import com.weng.searchset.service.PostService;
-import com.weng.searchset.Strategy.SearchTypeStrategy;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -16,7 +15,7 @@ import java.util.List;
  * 文章类型搜索
  */
 @Component
-public class PostStrategy implements SearchTypeStrategy {
+public class PostStrategy implements DataSourceStrategy {
 
     @Resource
     private PostService postService;

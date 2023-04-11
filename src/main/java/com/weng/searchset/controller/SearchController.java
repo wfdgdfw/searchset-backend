@@ -15,8 +15,8 @@ import com.weng.searchset.model.vo.SearchVO;
 import com.weng.searchset.model.vo.UserVO;
 import com.weng.searchset.service.PictureService;
 import com.weng.searchset.service.PostService;
-import com.weng.searchset.Strategy.SearchTypeStrategy;
-import com.weng.searchset.Strategy.SearchTypeStrategyHelper;
+import com.weng.searchset.Strategy.DataSourceStrategy;
+import com.weng.searchset.Strategy.DataSourceStrategyHelper;
 import com.weng.searchset.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,7 +46,7 @@ public class SearchController {
     private PictureService pictureService;
 
     @Resource
-    private SearchTypeStrategyHelper searchTypeStrategyHelper;
+    private DataSourceStrategyHelper dataSourceStrategyHelper;
 
     @PostMapping("/alll")
     public BaseResponse<SearchVO> searchAlll(@RequestBody SearchRequest searchRequest, HttpServletRequest request) {
@@ -105,7 +105,7 @@ public class SearchController {
     public BaseResponse<SearchAllVO> searchAll(@RequestBody SearchRequest searchRequest, HttpServletRequest request) {
         String searchText = searchRequest.getSearchText();
         String searchType = searchRequest.getSearchType();
-        SearchTypeStrategy strategy = searchTypeStrategyHelper.getStrategy(searchType);
+        DataSourceStrategy strategy = dataSourceStrategyHelper.getStrategy(searchType);
         if (strategy==null){
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }

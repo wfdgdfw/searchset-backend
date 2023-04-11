@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.weng.searchset.model.entity.Picture;
 import com.weng.searchset.model.enums.SearchTypeEnum;
 import com.weng.searchset.service.PictureService;
-import com.weng.searchset.Strategy.SearchTypeStrategy;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -12,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Component
-public class PictureStrategy implements SearchTypeStrategy {
+public class PictureStrategy implements DataSourceStrategy {
 
     @Resource
     private PictureService pictureService;
